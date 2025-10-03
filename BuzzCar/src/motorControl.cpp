@@ -6,7 +6,9 @@ void initMotorControl() {
 
   // Alternatively, set with internal pull-up resistor (recommended for buttons)
   // pinMode(21, INPUT_PULLUP); 
-  
-  Serial.begin(9600); // Initialize serial communication for output
-  Serial.println("Started Program");
+}
+
+
+void motorOn(int input) {
+  digitalWrite(11, input);
 }

@@ -6,12 +6,11 @@ void initSerialMonitor() {
 
   // Alternatively, set with internal pull-up resistor (recommended for buttons)
   // pinMode(21, INPUT_PULLUP); 
-  
-  Serial.begin(9600); // Initialize serial communication for output
-  Serial.println("Started Program");
+  // Serial.begin(9600); // Initialize serial communication for output
+  // Serial.println("Started Program");
 }
 
-void Monitor() {
+int Monitor() {
   int buttonState = digitalRead(10); // Read the state of GPIO 21
 
   if (buttonState == HIGH) {
@@ -19,5 +18,7 @@ void Monitor() {
   } else {
     Serial.print("Pin is LOW");
   }
-  delay(100); // Small delay to avoid rapid readings
+  delay(100);
+  return buttonState;
+   // Small delay to avoid rapid readings
 }
