@@ -1,24 +1,22 @@
-#include <Arduino.h>
+// #include <Arduino.h>
 
-void initSerialMonitor() {
-  // Set a specific GPIO pin (e.g., GPIO 21) as an input
-  pinMode(10, INPUT_PULLDOWN); 
+// const int ADC_PIN = 4; // Use a valid ADC pin on ESP32
 
-  // Alternatively, set with internal pull-up resistor (recommended for buttons)
-  // pinMode(21, INPUT_PULLUP); 
-  // Serial.begin(9600); // Initialize serial communication for output
-  // Serial.println("Started Program");
-}
+// void setup() {
+//   Serial.begin(115200);
+//   // pinMode not needed for analogRead
+// }
 
-int Monitor() {
-  int buttonState = digitalRead(10); // Read the state of GPIO 21
+// void loop() {
+//   int sensorValue = analogRead(ADC_PIN); // Reads 0-4095
+//   Serial.print("Analog value: ");
+//   Serial.println(sensorValue);
 
-  if (buttonState == HIGH) {
-    Serial.print("Pin is HIGH");
-  } else {
-    Serial.print("Pin is LOW");
-  }
-  delay(100);
-  return buttonState;
-   // Small delay to avoid rapid readings
-}
+//   if (sensorValue > 2000) {  // Example threshold
+//     Serial.println("Pin is HIGH");
+//   } else {
+//     Serial.println("Pin is LOW");
+//   }
+
+//   delay(100);
+// }

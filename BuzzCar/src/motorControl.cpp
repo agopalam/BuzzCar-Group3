@@ -1,14 +1,35 @@
 #include <Arduino.h>
 
+
+int leftMotor = 11;
+int rightMotor = 10;
 void initMotorControl() {
-  // Set a specific GPIO pin (e.g., GPIO 21) as an input
-  pinMode(11, OUTPUT); 
-
-  // Alternatively, set with internal pull-up resistor (recommended for buttons)
-  // pinMode(21, INPUT_PULLUP); 
+  pinMode(leftMotor, OUTPUT);
+  pinMode(rightMotor, OUTPUT);
 }
 
-
-void motorOn(int input) {
-  digitalWrite(11, input);
+void leftMotorCont(int input) {
+  digitalWrite(leftMotor, input);
 }
+
+void rightMotorCont(int input) {
+  digitalWrite(rightMotor, input);
+}
+
+// void pulseWidth() {
+//   // increase the LED brightness
+//   Serial.println(" Increasing ");
+//   for(int dutyCycle = 0; dutyCycle <= 255; dutyCycle++){   
+//     // changing the LED brightness with PWM
+//     analogWrite(leftMotor, dutyCycle);
+//     delay(15);
+//   }
+
+//   Serial.println("decreasing");
+//   // decrease the LED brightness
+//   for(int dutyCycle = 255; dutyCycle >= 0; dutyCycle--){
+//     // changing the LED brightness with PWM
+//     analogWrite(leftMotor, dutyCycle);
+//     delay(15);
+//   }
+// }

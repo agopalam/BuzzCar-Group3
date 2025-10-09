@@ -7,18 +7,23 @@
 
 
 void setup() {
-  pinMode(11, OUTPUT); 
-  Serial.begin(9600); // Initialize serial communication for output
+  Serial.begin(9600);
   Serial.println("Started Program");
-  // initSerialMonitor();
+  initMotorControl();
+  initSensors();
 }
 
 void loop() {
-  digitalWrite(11, LOW);
+  bool left = leftSensorRead();
+  bool right = rightSensorRead();
+  Serial.print("LeftSensor ");
+  Serial.println(left);
+  Serial.print("RightSensor ");
+  Serial.println(right);
+  leftMotorCont(LOW);
   Serial.println("LOW");
   delay(2000);
-  digitalWrite(11, HIGH);
+  leftMotorCont(HIGH);
   Serial.println("HIGH");
   delay(2000);
-  // Monitor();
 }
