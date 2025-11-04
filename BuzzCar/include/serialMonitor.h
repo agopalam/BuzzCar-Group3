@@ -3,4 +3,3 @@
 
     void initSerialMonitor();
     int Monitor();
-    extern int myGlobalVariable;
